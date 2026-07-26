@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuzzy Tsukamoto</title>
+</head>
+<body>
+
+<h1>Sistem Kontrol Kipas Berbasis Fuzzy Tsukamoto</h1>
+
+<h3>Pengantar</h3>
+<p>
+Dalam kehidupan sehari-hari, kita sering menggunakan istilah seperti "dingin", "hangat",
+atau "panas" yang bersifat tidak pasti. Logika fuzzy digunakan untuk menangani
+ketidakpastian tersebut dengan menggunakan derajat keanggotaan antara 0 sampai 1.
+</p>
+
+<p>
+Pada aplikasi ini, sistem akan menentukan kecepatan kipas berdasarkan dua input:
+<b>suhu</b> dan <b>kelembaban</b>, menggunakan metode Tsukamoto.
+</p>
+
+<h3>Aturan Fuzzy</h3>
+<ul>
+    <li>IF suhu dingin AND kelembaban kering THEN kipas lambat</li>
+    <li>IF suhu dingin AND kelembaban lembab THEN kipas sedang</li>
+    <li>IF suhu panas AND kelembaban kering THEN kipas sedang</li>
+    <li>IF suhu panas AND kelembaban lembab THEN kipas cepat</li>
+</ul>
+
+<h3>Grafik Fungsi Keanggotaan Suhu</h3>
+<img src="data:image/png;base64,{{plot_suhu}}" width="500">
+
+<h3>Grafik Fungsi Keanggotaan Kelembaban</h3>
+<img src="data:image/png;base64,{{plot_lembab}}" width="500">
+
+<br><br>
+<a href="/tambah">
+    <button>Mulai Input Data</button>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Fuzzy</title>
+</head>
+<body>
+
+<h2>Hasil Perhitungan</h2>
+
+<p>Suhu: {{suhu}} °C</p>
+<p>Kelembaban: {{kelembaban}} %</p>
+<h3>Detail Perhitungan Fuzzy</h3>
+
+<table border="1" cellpadding="5">
+<tr>
+    <th>Komponen</th>
+    <th>Nilai</th>
+</tr>
+<tr><td>μ Dingin</td><td>{{detail.dingin}}</td></tr>
+<tr><td>μ Panas</td><td>{{detail.panas}}</td></tr>
+<tr><td>μ Kering</td><td>{{detail.kering}}</td></tr>
+<tr><td>μ Lembab</td><td>{{detail.lembab}}</td></tr>
+<tr><td>α1 (Rule 1)</td><td>{{detail.a1}}</td></tr>
+<tr><td>α2 (Rule 2)</td><td>{{detail.a2}}</td></tr>
+<tr><td>α3 (Rule 3)</td><td>{{detail.a3}}</td></tr>
+<tr><td>α4 (Rule 4)</td><td>{{detail.a4}}</td></tr>
+<tr><td>z1</td><td>{{detail.z1}}</td></tr>
+<tr><td>z2</td><td>{{detail.z2}}</td></tr>
+<tr><td>z3</td><td>{{detail.z3}}</td></tr>
+<tr><td>z4</td><td>{{detail.z4}}</td></tr>
+</table>
+<h3>Penjelasan</h3>
+<p>
+Langkah perhitungan dilakukan sebagai berikut:
+</p>
+
+<ol>
+<li>Menghitung derajat keanggotaan suhu dan kelembaban</li>
+<li>Mengambil nilai minimum untuk setiap aturan (α-predikat)</li>
+<li>Menghitung nilai output tiap aturan (z1 dan z2)</li>
+<li>Menggabungkan menggunakan rata-rata terbobot:</li>
+</ol>
+
+<p>
+z = (α1 × z1 + α2 × z2) / (α1 + α2)
+</p>
+<h3>Kecepatan Kipas: {{hasil}}</h3>
+
+<h3>Grafik Fuzzifikasi</h3>
+<img src="data:image/png;base64,{{plot1}}" width="500">
+
+<h3>Grafik Defuzzifikasi</h3>
+<img src="data:image/png;base64,{{plot2}}" width="500">
+
+<h3>Grafik 3D (Suhu vs Kelembaban vs Output)</h3>
+<img src="data:image/png;base64,{{plot3d}}" width="600">
+
+<br><br>
+<a href="/tambah">Input Lagi</a>
+
+</body>
+</html>
